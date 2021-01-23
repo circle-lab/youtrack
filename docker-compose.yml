@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+    web:
+        build:
+            context: ./youtrack
+            dockerfile: Dockerfile
+        image: youtrack-alpine
+        container_name: youtrack
+        ports:
+            - 18081:8080
+        working_dir: /tmp
+        command: java -jar youtrack.jar 
